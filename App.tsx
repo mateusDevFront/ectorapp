@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { StatusBar } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { Routes } from "./src/routes/routes"
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Ector Barber - Agenda para Barbeiros</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <StatusBar
+       backgroundColor={'transparent'} translucent={true} 
+      />
+      <Routes />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
